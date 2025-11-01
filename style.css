@@ -1,0 +1,313 @@
+/* --- 5. Fonts & Colors Definitions --- */
+:root {
+    --color-primary: #2E4A35; /* Deep natural green */
+    --color-accent: #E9F0E3;  /* Mint pastel (Hero Background) */
+    --color-cream: #FAF9F6;  /* Soft cream (Body/About Background) */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    --border-radius-btn: 50px; /* Full rounded buttons */
+}
+
+/* Global Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    background-color: var(--color-cream);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+/* --- 4. Navigation Bar --- */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.logo span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-primary);
+    margin-left: 35px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: darken(var(--color-primary), 10%);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
+}
+
+/* --- 6. Buttons & Hover States (Shop Now) --- */
+.btn-shop-now {
+    background-color: var(--color-primary);
+    color: var(--color-cream);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    display: inline-block;
+    border-radius: var(--border-radius-btn);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border: 2px solid var(--color-primary);
+}
+
+.btn-shop-now:hover {
+    background-color: darken(var(--color-primary), 5%); /* Slightly darker shade on hover */
+    box-shadow: 0 4px 8px rgba(46, 74, 53, 0.2);
+}
+
+
+/* --- 1. Hero Section --- */
+.hero-section {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--color-accent);
+    padding: 120px 5% 50px 5%; /* Adjusting top padding for navbar */
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 4.5vw; /* Responsive sizing for desktop heading */
+    margin-bottom: 25px;
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.soap-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 600px;
+    border-radius: 8px; /* Slight rounding for elegance */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 2. "Why Choose Us" Section --- */
+.features-section {
+    text-align: center;
+    padding: 100px 5%;
+    background-color: var(--color-cream);
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.feature-item {
+    width: 30%;
+}
+
+.feature-item i {
+    font-size: 45px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.feature-item p {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* --- 3. About Section --- */
+.about-section {
+    display: flex;
+    align-items: center;
+    padding: 100px 5%;
+    gap: 80px;
+    background-color: var(--color-accent); /* Alternating background for visual interest */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 45%;
+}
+
+.founder-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 5%;
+    background-color: var(--color-primary);
+    color: var(--color-cream);
+    font-size: 0.9rem;
+}
+
+
+/* --- Media Queries (Mobile-First Responsiveness) --- */
+
+/* Tablet and Smaller Desktop */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 6vw;
+    }
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    
+    /* Navigation */
+    .navbar {
+        padding: 20px 5%;
+        background-color: var(--color-accent); /* Make header solid for mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links by default on mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu icon on mobile */
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px; 
+    }
+
+    .hero-content, .hero-image {
+        max-width: 100%;
+        flex: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Smaller heading for mobile */
+    }
+
+    .hero-image {
+        padding: 40px 0 0 0;
+    }
+
+    .soap-image {
+        max-height: 400px;
+    }
+
+    /* Features Section */
+    .features-section {
+        padding: 60px 5%;
+    }
+
+    .features-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .feature-item {
+        width: 100%;
+    }
+
+    /* About Section */
+    .about-section {
+        flex-direction: column;
+        padding: 60px 5%;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 80%;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+}
+
